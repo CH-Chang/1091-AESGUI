@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/AESMain">
+        <file>images/svg/close.svg</file>
+        <file>images/svg/maximize.svg</file>
+        <file>images/svg/minimize.svg</file>
+        <file>images/svg/left.svg</file>
+        <file>images/svg/right.svg</file>
+        <file>images/svg/down.svg</file>
+        <file>images/svg/icon.svg</file>
+    </qresource>
+</RCC>

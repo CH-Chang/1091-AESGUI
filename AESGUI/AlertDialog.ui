@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AlertDialog</class>
+ <widget class="QDialog" name="AlertDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>467</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AlertDialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#AlertDialog{
+	background-color: white;
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,10,1">
+   <item>
+    <layout class="QHBoxLayout" name="navigationBar" stretch="1,0,0,0">
+     <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+      <widget class="QLabel" name="title">
+       <property name="font">
+        <font>
+         <family>微軟正黑體</family>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignRight|Qt::AlignTop">
+      <widget class="QPushButton" name="minimize">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="toolTip">
+        <string>最小化</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#minimize{
+	background-color: transparent;
+	border: 0;
+	border-style:none;
+	border-radius:5px;
+	padding: 3px 3px 3px 3px;
+}
+
+#minimize:hover{
+	background-color: #eeeeee;
+	border: 0;
+	border-style:none;
+	border-radius:5px;
+	padding: 3px 3px 3px 3px;
+}
+
+#minimize:pressed{
+	background-color: #999999;
+	border: 0;
+	border-style:none;
+	border-radius:5px;
+	padding: 3px 3px 3px 3px;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="AlertDialog.qrc">
+         <normaloff>:/AlertDialog/images/svg/minimize.svg</normaloff>:/AlertDialog/images/svg/minimize.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>12</width>
+         <height>12</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignRight|Qt::AlignTop">
+      <widget class="QPushButton" name="maximize">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="toolTip">
+        <string>最大化</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#maximize{
+	background-color: transparent;
+	border: 0;
+	border-style:none;
+	border-radius:5px;
+	padding: 3px 3px 3px 3px;
+}
+
+#maximize:hover{
+	background-color: #eeeeee;
+	border: 0;
+	border-style:none;
+	border-radius:5px;
+	padding: 3px 3px 3px 3px;
+}
+
+#maximize:pressed{
+	background-color: #999999;
+	border: 0;
+	border-style:none;
+	border-radius:5px;
+	padding: 3px 3px 3px 3px;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="AlertDialog.qrc">
+         <normaloff>:/AlertDialog/images/svg/maximize.svg</normaloff>:/AlertDialog/images/svg/maximize.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>12</width>
+         <height>12</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignRight|Qt::AlignTop">
+      <widget class="QPushButton" name="close">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="toolTip">
+        <string>關閉</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#close{
+	background-color: transparent;
+	border: 0;
+	border-style:none;
+	border-radius:5px;
+	padding: 3px 3px 3px 3px;
+}
+
+#close:hover{
+	background-color: #eeeeee;
+	border: 0;
+	border-style:none;
+	border-radius:5px;
+	padding: 3px 3px 3px 3px;
+}
+
+#close:pressed{
+	background-color: #999999;
+	border: 0;
+	border-style:none;
+	border-radius:5px;
+	padding: 3px 3px 3px 3px;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="AlertDialog.qrc">
+         <normaloff>:/AlertDialog/images/svg/close.svg</normaloff>:/AlertDialog/images/svg/close.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>12</width>
+         <height>12</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="message">
+     <property name="font">
+      <font>
+       <family>微軟正黑體</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="checkArea">
+     <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+      <widget class="QPushButton" name="comfirm">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>微軟正黑體</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#comfirm{
+	background-color: white;
+	border: 1px;
+	border-style: solid;
+	border-color: #00327F;
+	border-radius: 5px;
+
+	padding: 4px 20px 4px 20px;
+
+	color: #00327F;
+}
+
+#comfirm:hover{
+	background-color: #00327F;
+	border: 1px;
+	border-style: solid;
+	border-color: #00327F;
+	border-radius: 5px;
+
+	padding: 4px 20px 4px 20px;
+
+	color: white;
+}
+
+#comfirm:pressed{
+	background-color: #00304A;
+	border: 1px;
+	border-style: solid;
+	border-color: #00327F;
+	border-radius: 5px;
+
+	padding:4px 20px 4px 20px;
+
+	color: white;
+}</string>
+       </property>
+       <property name="text">
+        <string>確認</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="AlertDialog.qrc"/>
+ </resources>
+ <connections/>
+</ui>

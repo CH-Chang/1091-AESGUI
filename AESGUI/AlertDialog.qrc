@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/AlertDialog">
+        <file>images/svg/close.svg</file>
+        <file>images/svg/maximize.svg</file>
+        <file>images/svg/minimize.svg</file>
+        <file>images/svg/icon.svg</file>
+    </qresource>
+</RCC>
