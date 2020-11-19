@@ -785,5 +785,5 @@ private:
 	void CFB8Decrypt(); // CFB8家Α秆盞 
 	void CTRDecrypt(); // CTR家Α秆盞 
 
-	int GMul(int, int); // Τ办猭 
+	unsigned char GMul(const unsigned char, const unsigned char); // Τ办猭 
 };

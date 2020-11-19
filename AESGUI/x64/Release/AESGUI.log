@@ -1,1 +1,4 @@
-﻿  AESGUI.vcxproj -> D:\Workspaces\C++\AESGUI\x64\Release\AESGUI.exe
+﻿  AES.cpp
+  AESMain.cpp
+  moc_AESMain.cpp
+  AESGUI.vcxproj -> D:\Workspaces\C++\AESGUI\x64\Release\AESGUI.exe

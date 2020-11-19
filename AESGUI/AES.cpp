@@ -1246,22 +1246,49 @@ void AES::decrypt(const unsigned char * ciphertext, const int ciphertextSize_byt
 
 
 
-int AES::GMul(int u, int v) {
-	int p = 0;
-	for (int i = 0; i < 8; ++i) {
-		if (u & 0x01) {
-			p ^= v;
+unsigned char AES::GMul(const unsigned char a, const unsigned char b) {
+	// a = 11111111b = 2^(7)+2^(6)+2^(5)+2^(4)+2^(3)+2^(2)+2+1
+
+	unsigned char res = 0x00;
+	unsigned char ta = a;
+	unsigned char tb = b;
+
+	for (int i = 0; i < 8; i++) {
+
+		// 如果是第一次
+		if (i == 0) {
+			//如果a的最右邊bit是1 
+			if (ta & 0x01 == 0x01) {
+				res ^= b;
+			}
+			ta >>= 1;
+			continue;
 		}
 
-		int flag = (v & 0x80);
-		v <<= 1;
-		if (flag) {
-			v ^= 0x1B;  /* P(x) = x^8 + x^4 + x^3 + x + 1 */
+
+		// GMul2 ----------------------- 
+		/*
+			GMul2(2,v)
+				if(v>>7==0x00) v<<1
+				if(v>>7==0x01) (v<<1)^0x1b -> 代表最高項(X^(7))是1要限制下來所以mod x^(8)+x^(4)+x^(3)+x+1，等同於XOR 0x1b
+		*/
+
+		if (tb >> 7 == 0x01) {
+			tb = (tb << 1) ^ 0x1b;
+		}
+		else {
+			tb = tb << 1;
+		}
+		// GMul2 ----------------------- 
+
+		// 如果a的最右邊是1才要XOR 
+		if (ta & 0x01 == 0x01) {
+			res ^= tb;
 		}
 
-		u >>= 1;
+
+		ta = ta >> 1;
 	}
-	return p;
+	return res;
 }
-
 
